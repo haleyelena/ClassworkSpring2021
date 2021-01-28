@@ -52,14 +52,16 @@ def get_LDL_input():
     level = int(level)
     return level
 
-def analyze_HDL(level):
+def analyze_LDL(level):
     #analyze data
-    if level < 40 :
-        return "Low"
-    elif 40 <= level < 60 :
-        return "Borderline Low"
-    else :
+    if level < 130 :
+        return "Normal"
+    elif 130 <= level <= 159 :
+        return "Borderline High"
+    elif 160 <= level <= 189 :
         return "High"
+    else :
+        return "Very High"
 
 def output_HDL(HDL, analysis):
     print("The HDL entered was {}".format(HDL))
