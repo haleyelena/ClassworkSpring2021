@@ -63,8 +63,8 @@ def analyze_LDL(level):
     else :
         return "Very High"
 
-def output_HDL(HDL, analysis):
-    print("The HDL entered was {}".format(HDL))
+def output_LDL(LDL, analysis):
+    print("The LDL entered was {}".format(LDL))
     print("The level is {}".format(analysis))
     #output data
 
