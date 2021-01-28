@@ -77,10 +77,10 @@ def tc_driver():
     output_tc(tc,analysis)
     
     
-def get_HDL_input():
+def get_tc_input():
     #get data
-    print("Check HDL")
-    level = input("Enter HDL level: ")
+    print("Check Total Cholesterol")
+    level = input("Enter Total Cholesterol level: ")
     level = int(level)
     return level
 
