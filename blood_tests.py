@@ -93,8 +93,8 @@ def analyze_tc(level):
     else :
         return "High"
 
-def output_HDL(HDL, analysis):
-    print("The HDL entered was {}".format(HDL))
+def output_tc(tc, analysis):
+    print("The Total Cholesterol entered was {}".format(HDL))
     print("The level is {}".format(analysis))
     #output data
 
