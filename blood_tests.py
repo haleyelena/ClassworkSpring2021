@@ -84,12 +84,12 @@ def get_tc_input():
     level = int(level)
     return level
 
-def analyze_HDL(level):
+def analyze_tc(level):
     #analyze data
-    if level < 40 :
-        return "Low"
-    elif 40 <= level < 60 :
-        return "Borderline Low"
+    if level < 200 :
+        return "Normal"
+    elif 200 <= level <= 239 :
+        return "Borderline High"
     else :
         return "High"
 
