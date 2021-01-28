@@ -4,6 +4,7 @@ def interface():
         print("\nOptions")
         print("1 - HDL")
         print("2 - LDL")
+        print("3 - Total Cholesterol")
         print("9 - Quit")
         choice = input("Enter an option: ")
         if choice == "9" :
@@ -12,6 +13,8 @@ def interface():
             HDL_driver()
         elif choice == "2":
             LDL_driver()
+        elif choice == "3":
+            tc_driver()
 
 def HDL_driver():
     HDL = get_HDL_input()
@@ -67,6 +70,34 @@ def output_LDL(LDL, analysis):
     print("The LDL entered was {}".format(LDL))
     print("The level is {}".format(analysis))
     #output data
+
+def tc_driver():
+    tc = get_tc_input()
+    analysis = analyze_tc(tc)
+    output_tc(tc,analysis)
+    
+    
+def get_tc_input():
+    #get data
+    print("Check Total Cholesterol")
+    level = input("Enter Total Cholesterol level: ")
+    level = int(level)
+    return level
+
+def analyze_tc(level):
+    #analyze data
+    if level < 200 :
+        return "Normal"
+    elif 200 <= level <= 239 :
+        return "Borderline High"
+    else :
+        return "High"
+
+def output_tc(tc, analysis):
+    print("The Total Cholesterol entered was {}".format(tc))
+    print("The level is {}".format(analysis))
+    #output data
+
 
 interface()
 
