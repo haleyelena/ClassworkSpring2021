@@ -3,12 +3,15 @@ def interface():
     while True:
         print("\nOptions")
         print("1 - HDL")
+        print("2 - LDL")
         print("9 - Quit")
         choice = input("Enter an option: ")
         if choice == "9" :
             return
         elif choice == "1":
             HDL_driver()
+        elif choice == "2":
+            LDL_driver()
 
 def HDL_driver():
     HDL = get_HDL_input()
