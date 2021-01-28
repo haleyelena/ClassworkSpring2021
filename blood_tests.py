@@ -23,14 +23,14 @@ def get_HDL_input():
     level = int(level)
     return level
 
-def analyze_HDL():
+def analyze_HDL(level):
     #analyze data
     if level < 40 :
-        print("Low")
+        return "Low"
     elif 40 <= level < 60 :
-        print("Borderline Low")
+        return "Borderline Low"
     else :
-        print("High")
+        return "High"
 
 def output_HDL(HDL, analysis):
     print("The HDL entered was {}".format(HDL))
