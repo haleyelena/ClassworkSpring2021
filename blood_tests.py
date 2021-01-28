@@ -45,10 +45,10 @@ def LDL_driver():
     analysis = analyze_LDL(LDL)
     output_LDL(LDL,analysis)
 
-def get_HDL_input():
+def get_LDL_input():
     #get data
-    print("Check HDL")
-    level = input("Enter HDL level: ")
+    print("Check LDL")
+    level = input("Enter LDL level: ")
     level = int(level)
     return level
 
