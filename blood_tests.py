@@ -11,7 +11,9 @@ def interface():
             HDL_driver()
 
 def HDL_driver():
-    
+    HDL = get_HDL_input()
+    analysis = analyze_HDL(HDL)
+    output_HDL(HDL,analysis)
     
     
 def get_HDL_input():
