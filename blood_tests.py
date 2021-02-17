@@ -31,12 +31,12 @@ def get_HDL_input():
 
 def analyze_HDL(level):
     #analyze data
-    if level < 40 :
-        return "Low"
+    if level >= 60 :
+        return "Normal"
     elif 40 <= level < 60 :
         return "Borderline Low"
     else :
-        return "High"
+        return "Low"
 
 def output_HDL(HDL, analysis):
     print("The HDL entered was {}".format(HDL))
@@ -98,6 +98,6 @@ def output_tc(tc, analysis):
     print("The level is {}".format(analysis))
     #output data
 
-
-interface()
+if __name__ == "__main__":
+    interface()
 
