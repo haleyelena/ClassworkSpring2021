@@ -1,5 +1,6 @@
 def create_database_entry(name, id_no, age):
-    new_patient = [name, id_no, age, []]
+    #new_patient = [name, id_no, age, []]
+    new_patient = {"name": name, "id": id_no, "age": age, "test": list()}
     return new_patient
 
 def print_dictionary(db):
@@ -18,9 +19,28 @@ def find_patient(id_no, db):
 
 def add_test_result(id_no, db, test_name, test_results):
     for patient in db:
-        if patient[1] == id_no: 
-            patient[3].append((test_name, test_results))
+        if patient["id"] == id_no: 
+            patient["test"].append((test_name, test_results))
     
+def print_db(db):
+    for patient in db:
+        print_patient(patient)
+
+def print_patient(patient):
+    for key in patient:
+        print(" {} = {}".format(key, patient[key]))
+
+def demo(patient):
+    if "name" in patient:
+        print("Name is {}".format(patient["name"]))
+    if "DOB" in patient:
+        print("DOB is {}".format(patient["DOB"]))
+
+def minor_or_adult(patient):
+    if patient["age"] >= 18:
+        print("Adult")
+    else:
+        print("Minor")
 
 def main():
     db = list()
@@ -28,11 +48,14 @@ def main():
     db.append(create_database_entry("Bob Boyles", 2, 31))
     db.append(create_database_entry("Chris Chou", 3, 32))
     db.append(create_database_entry("David Dinkins", 4, 33))
-    print(db)
-    add_test_result(3, db, "HDL", 65)
-    print(db)
-    add_test_result(3, db, "LDL", 80)
-    print(db)
+    print_db(db)
+    demo(db[0])
+    minor_or_adult(db[0])
+    #print(db)
+    #add_test_result(3, db, "HDL", 65)
+    #print(db)
+    #add_test_result(3, db, "LDL", 80)
+    #print(db)
     
 
 if __name__ == "__main__":
